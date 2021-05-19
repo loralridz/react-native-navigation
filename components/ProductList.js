@@ -1,29 +1,28 @@
 import React from 'react'
 import { products } from "./data/product";
-import { StyleSheet, Text, View, Button, FlatList, TouchableOpacity } from 'react-native';
+import { Text, View, FlatList, TouchableOpacity } from 'react-native';
+import { styles } from "./styles";
+
 const Item = ({ title }) => (
     <View>
-        {/* <Button
-        //   onPress={() => navigation.navigate('Home')}
-        onPress={console.log(999)}
-        style={{backgroundColor:"white",color:"black"}}
-        >{title}</Button> */}
         <TouchableOpacity
             style={styles.button}
             onPress={() => onPress(title)}
         >
-            <Text>{title}</Text>
+            <Text>{title.name}</Text>
         </TouchableOpacity>
     </View>
 );
+
 let onPress;
+
 const renderItem = ({ item }) => <Item title={item} />;
+
 export const ProductList = ({ navigation }) => {
     onPress = (title) => {
-        console.log("pressed")
         navigation.navigate('ProductDetail', {
-            name: title,
-            // otherParam: 'anything you want here',
+            name: title.name,
+            price: title.price
         })
     }
     return (
@@ -32,23 +31,7 @@ export const ProductList = ({ navigation }) => {
             <FlatList
                 data={products}
                 renderItem={renderItem}
-
-            // keyExtractor={(item) => item.id}
             />
         </View>
     )
-
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }, button: {
-        alignItems: "center",
-        backgroundColor: "#DDDDDD",
-        padding: 10
-    },
-});
-
