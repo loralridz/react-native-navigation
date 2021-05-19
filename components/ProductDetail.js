@@ -1,8 +1,8 @@
 import React from 'react'
-import {styles} from "./styles"
-import { Text, View, FlatList, TouchableOpacity } from 'react-native';
+import { styles } from "./styles"
+import { Text, View } from 'react-native';
 
-export const ProductDetail = ({ navigation, route }) => {
+export const ProductDetail = ({ route }) => {
     const { name, price } = route.params;
     return (
         <View style={styles.container}>

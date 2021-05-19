@@ -1,9 +1,13 @@
 import React from 'react'
+import { styles } from "./styles"
+import { Text, View } from 'react-native';
 
-export const EmployeeDetail = () => {
+export const EmployeeDetail = ({ route }) => {
+    const { name, designation } = route.params;
     return (
-        <div>
-            EmployeeDetail
-        </div>
+        <View style={styles.container}>
+            <Text>{name}</Text>
+            <Text>{designation}</Text>
+        </View>
     )
 }
