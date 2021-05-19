@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const ProductDetail = () => {
+export const ProductDetail = ({ navigation, route }) => {
+    const { name } = route.params
+    console.log(name)
     return (
         <div>
-            ProductDetail
+            {name}
         </div>
     )
 }

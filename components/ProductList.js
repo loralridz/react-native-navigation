@@ -1,6 +1,6 @@
 import React from 'react'
 import { products } from "./data/product";
-import { StyleSheet, Text, View, Button, FlatList ,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList, TouchableOpacity } from 'react-native';
 const Item = ({ title }) => (
     <View>
         {/* <Button
@@ -10,7 +10,7 @@ const Item = ({ title }) => (
         >{title}</Button> */}
         <TouchableOpacity
             style={styles.button}
-        onPress={onPress}
+            onPress={() => onPress(title)}
         >
             <Text>{title}</Text>
         </TouchableOpacity>
@@ -19,9 +19,12 @@ const Item = ({ title }) => (
 let onPress;
 const renderItem = ({ item }) => <Item title={item} />;
 export const ProductList = ({ navigation }) => {
-    onPress=()=>{
+    onPress = (title) => {
         console.log("pressed")
-        navigation.navigate('ProductDetail')
+        navigation.navigate('ProductDetail', {
+            name: title,
+            // otherParam: 'anything you want here',
+        })
     }
     return (
         <View style={styles.container}>
