@@ -3,12 +3,12 @@ import { styles } from "./styles"
 import { Text, View } from 'react-native';
 
 export const OrderDetail = ({ route }) => {
-    const { order,name, price } = route.params;
+    const { order, name, price } = route.params;
     return (
         <View style={styles.container}>
-            <Text>{order}</Text>
-            <Text>{name}</Text>
-            <Text>{price}</Text>
+            <Text style={styles.text}>Order No. : {order}</Text>
+            <Text style={styles.text}>Product Name : {name}</Text>
+            <Text style={styles.text}>Product Price : {price}</Text>
         </View>
     )
 }

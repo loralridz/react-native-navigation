@@ -16,7 +16,7 @@ export const ProductList = ({ navigation }) => {
     }
     return (
         <View style={styles.container}>
-            <Text>Products List</Text>
+            <Text style={styles.text}>Products List</Text>
             <FlatList
                 data={products}
                 renderItem={renderItem}

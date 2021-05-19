@@ -6,8 +6,8 @@ export const ProductDetail = ({ route }) => {
     const { name, price } = route.params;
     return (
         <View style={styles.container}>
-            <Text>{name}</Text>
-            <Text>{price}</Text>
+            <Text style={styles.text}>Product Name : {name}</Text>
+            <Text style={styles.text}>Product Price : {price}</Text>
         </View>
     )
 }

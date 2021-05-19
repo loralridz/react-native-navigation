@@ -1,21 +1,25 @@
 import React from 'react'
-import { StyleSheet, Text, View,Button} from 'react-native';                                                                                                                          
-export const HomeScreen = ({navigation}) => {
+import { Text, View, TouchableOpacity } from 'react-native';
+import { styles } from "./styles"
+
+export const HomeScreen = ({ navigation }) => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Button
-                title="Products List"
-                onPress={() => navigation.navigate('ProductList')}
-            />
-            <Button
-                title="Employees List"
+            <TouchableOpacity
+                style={styles.button}
                 onPress={() => navigation.navigate('EmployeeList')}
-            />
-            <Button
-                title="Order List"
+
+            > <Text>Employee List</Text></TouchableOpacity>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('ProductList')}
+
+            > <Text>Product List</Text></TouchableOpacity>
+            <TouchableOpacity
+                style={styles.button}
                 onPress={() => navigation.navigate('OrderList')}
-            />
-        
+
+            > <Text>Order List</Text></TouchableOpacity>
         </View>
     )
 }
